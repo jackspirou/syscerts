@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// +build cgo,!arm,!arm64,!ios
+// +build cgo,darwin,!arm,!arm64,!ios
 
 package syscerts
 
@@ -60,6 +60,8 @@ int FetchPEMRootsC(CFDataRef *pemRoots) {
 	return 0;
 }
 */
+
+/*
 import "C"
 import (
 	"crypto/x509"
@@ -80,3 +82,4 @@ func initSystemRoots() {
 	roots.AppendCertsFromPEM(buf)
 	systemRoots = roots
 }
+*/

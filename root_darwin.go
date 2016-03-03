@@ -33,3 +33,7 @@ func execSecurityRoots() (*x509.CertPool, error) {
 
 	return roots, nil
 }
+
+func initSystemRoots() {
+	systemRoots, _ = execSecurityRoots()
+}
