@@ -31,7 +31,12 @@ The difference? The `crypto/x509.systemRootsPool` method is private so you
 cannot access it. :(
 
 There are plans for the `crypto/x509.systemRootsPool` method to become public
-in Go 1.7. When this happens `github.com/jackspirou/syscerts.SystemRootsPool`
-will no longer be needed.
+in Go 1.7. When this happens you might no longer need `github.com/jackspirou/syscerts.SystemRootsPool`.
+
+The only reason you may still use this package after the Go 1.7 release might
+be for the Mac OSX System Keychain certs which are not included in the
+`crypto/x509` package. Relevant lines below:
+
+* https://github.com/jackspirou/syscerts/blob/master/root_darwin.go#L24-L32
 
 Find more about this Go issue here: https://github.com/golang/go/issues/13335
