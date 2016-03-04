@@ -1,15 +1,15 @@
 # syscerts
 Gather local system certificates in Go via a public `SystemRootsPool` method.
 
-### What does this do?
+#### What does this do?
 Provide a way to gather local system certificates
 on different OS platforms.
 
-### How does it do it?
+#### How does it do it?
 It uses the `crypto/x509` package and provides a single public method called
 `SystemRootsPool()` to return a `*x509.CertPool` object.
 
-### How do you use it?
+#### How do you use it?
 ```Go
 // gather CA certs
 certpool := syscerts.SystemRootsPool()
@@ -23,7 +23,7 @@ client := &http.Client{Transport: transport}
 resp, err := client.Do(req)
 ```
 
-### Why even do it?
+#### Why even do it?
 The `crypto/x509` package already has a `systemRootsPool` method.
 The `crypto/x509.systemRootsPool` method is almost the same as
 `github.com/jackspirou/syscerts.SystemRootsPool`.
