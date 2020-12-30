@@ -5,8 +5,7 @@
 // license that can be found in the LICENSE file.
 
 // +build cgo
-// +build darwin
-// +build arm arm64 ios
+// +build darwin,ios
 
 package syscerts
 
